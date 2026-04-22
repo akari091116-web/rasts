@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wait Time Admin</title>
+
+<style>
+body{
+  font-family:"Trebuchet MS";
+  background:linear-gradient(#e6f7ff,#ffe6f2);
+  text-align:center;
+  margin-top:80px;
+}
+.card{
+  background:white;
+  width:350px;
+  margin:auto;
+  padding:30px;
+  border-radius:30px;
+  box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+input{
+  font-size:40px;
+  width:120px;
+  text-align:center;
+}
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:15px;
+  font-size:18px;
+  background:#ff4da6;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎠 待ち時間 管理ページ</h1>
+
+<div class="card">
+  <input id="time" type="number" placeholder="0"> 分
+  <br><br>
+  <button onclick="save()">保存</button>
+  <p id="msg"></p>
+</div>
+
+<script>
+function save(){
+  const t=document.getElementById("time").value;
+  localStorage.setItem("waitTime",t);
+  document.getElementById("msg").innerHTML="保存しました！";
+}
+</script>
+
+</body>
+</html>
